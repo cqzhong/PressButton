@@ -20,8 +20,6 @@
 		109D26D122A6595B00366E69 /* QDUIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 109D26CB22A6595B00366E69 /* QDUIHelper.m */; };
 		109D26D222A6595B00366E69 /* UIImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 109D26CC22A6595B00366E69 /* UIImageEffects.m */; };
 		109D26D322A6595B00366E69 /* QDCommonUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 109D26CD22A6595B00366E69 /* QDCommonUI.m */; };
-		10C33A2022DF1E7400FB83F4 /* lianzi.html in Resources */ = {isa = PBXBuildFile; fileRef = 10C33A1F22DF1E7400FB83F4 /* lianzi.html */; };
-		10C33A2422DF25E000FB83F4 /* hanzi.js in Resources */ = {isa = PBXBuildFile; fileRef = 10C33A2322DF25DF00FB83F4 /* hanzi.js */; };
 		CACABFB78DC53B438F71FB22 /* libPods-CDScrollBackground.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 140467A2022D4D3016F199B7 /* libPods-CDScrollBackground.a */; };
 /* End PBXBuildFile section */
 
@@ -53,8 +51,6 @@
 		109D26CC22A6595B00366E69 /* UIImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageEffects.m; sourceTree = "<group>"; };
 		109D26CD22A6595B00366E69 /* QDCommonUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDCommonUI.m; sourceTree = "<group>"; };
 		109D26CE22A6595B00366E69 /* QDUIHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDUIHelper.h; sourceTree = "<group>"; };
-		10C33A1F22DF1E7400FB83F4 /* lianzi.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = lianzi.html; sourceTree = "<group>"; };
-		10C33A2322DF25DF00FB83F4 /* hanzi.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = hanzi.js; sourceTree = "<group>"; };
 		10F894FE02077357FF968F1C /* Pods-CDScrollBackground.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CDScrollBackground.release.xcconfig"; path = "Target Support Files/Pods-CDScrollBackground/Pods-CDScrollBackground.release.xcconfig"; sourceTree = "<group>"; };
 		140467A2022D4D3016F199B7 /* libPods-CDScrollBackground.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CDScrollBackground.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E463C07316FEB68923747B4 /* Pods-CDScrollBackground.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CDScrollBackground.debug.xcconfig"; path = "Target Support Files/Pods-CDScrollBackground/Pods-CDScrollBackground.debug.xcconfig"; sourceTree = "<group>"; };
@@ -118,8 +114,6 @@
 			isa = PBXGroup;
 			children = (
 				10137EC022A6138100F3D4A7 /* Info.plist */,
-				10C33A2322DF25DF00FB83F4 /* hanzi.js */,
-				10C33A1F22DF1E7400FB83F4 /* lianzi.html */,
 				10137EC122A6138100F3D4A7 /* main.m */,
 				10137EBB22A6138100F3D4A7 /* Assets.xcassets */,
 				10137ECD22A6162000F3D4A7 /* LaunchScreen.xib */,
@@ -298,8 +292,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				10137ECE22A6162000F3D4A7 /* LaunchScreen.xib in Resources */,
-				10C33A2022DF1E7400FB83F4 /* lianzi.html in Resources */,
-				10C33A2422DF25E000FB83F4 /* hanzi.js in Resources */,
 				10137EBC22A6138100F3D4A7 /* Assets.xcassets in Resources */,
 				10036A3A22D2E5150076242B /* CDTestViewController.xib in Resources */,
 			);
