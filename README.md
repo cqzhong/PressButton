@@ -45,4 +45,4 @@
 
 ## License
 
-CDHorizontalScrollView is available under the MIT license. See the LICENSE file for more info.
+PressButton is available under the MIT license. See the LICENSE file for more info.
