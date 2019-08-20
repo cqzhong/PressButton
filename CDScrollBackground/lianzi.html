@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                    <title>练字</title>
+                    <style>
+                        * {
+                            padding: 0;
+                            margin: 0
+                        }
+                    </style>
+    </head>
+    
+    <body>
+        <div id="character-target-div"></div>
+        <script src="https://cdn.changguwen.com/weboss/code/hanzi-writer.min.js"></script>
+        <script>
+            (function (d) {
+             var iW = this.innerWidth;
+             var iH = this.innerHeight;
+             this.hanziCreate = function (str) {
+             var svg = d.querySelector('#character-target-div svg');
+             if (svg) {
+             d.querySelector('#character-target-div').innerHTML = '';
+             }
+             var writer = HanziWriter.create('character-target-div', str, {
+                                             charDataLoader: function (char, onComplete) {
+                                             var httpRequest = new XMLHttpRequest();
+                                             httpRequest.open('GET', 'https://cdn.changguwen.com/hanzi-writer-data/' + char + '.json', true);
+                                             httpRequest.send();
+                                             httpRequest.onreadystatechange = function () {
+                                             if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+                                             var json = JSON.parse(httpRequest.responseText);
+                                             onComplete(json);
+                                             }
+                                             };
+                                             },
+                                             width: iW,
+                                             height: iH - 5,
+                                             strokeColor: '#FF6B17',
+                                             outlineColor: '#666666',
+                                             showHintAfterMisses: 1
+                                             });
+             writer.animateCharacter({
+                                     onComplete: function () {
+                                     native('hanziAnimateEnd');
+                                     writer.updateColor('outlineColor', '#DDD');
+                                     writer.quiz({
+                                                 onComplete: function () {
+                                                 native('hanziTestEnd', str);
+                                                 }
+                                                 });
+                                     }
+                                     });
+             }
+             })(document);
+             function native(name, data) {
+                 var ua = navigator.userAgent.toLowerCase();
+                 if (ua.indexOf("msgt_android") >= 0) {
+                     data ? android[name](typeof data === 'object' ? JSON.stringify(data) : data) : android[name]()
+                 }
+                 if (ua.indexOf("msgt_ios") >= 0) {
+                     function setupWebViewJavascriptBridge(callback) {
+                         if (window.WebViewJavascriptBridge) {
+                             return callback(WebViewJavascriptBridge);
+                         }
+                         if (window.WVJBCallbacks) {
+                             return window.WVJBCallbacks.push(callback);
+                         }
+                         window.WVJBCallbacks = [callback];
+                         var WVJBIframe = document.createElement('iframe');
+                         WVJBIframe.style.display = 'none';
+                         WVJBIframe.src = 'wvjbscheme://__BRIDGE_LOADED__';
+                         document.documentElement.appendChild(WVJBIframe);
+                         setTimeout(function () {
+                                    document.documentElement.removeChild(WVJBIframe);
+                                    }, 0)
+                     }
+                     setupWebViewJavascriptBridge(function (bridge) {
+                                                  bridge.callHandler(name, data);
+                                                  })
+                 }
+             }
+        </script>
+    </body>
+    
+</html>

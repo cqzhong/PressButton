@@ -1,0 +1,32 @@
+//
+//  CD_PrefixHeader.pch
+//  FT_iPhone
+//
+//  Created by cqz on 2018/10/27.
+//  Copyright © 2018 ChangDao. All rights reserved.
+//
+
+#ifndef CD_PrefixHeader_pch
+#define CD_PrefixHeader_pch
+
+#ifdef __OBJC__
+
+
+#import <QMUIKit/QMUIKit.h>
+#import "QDCommonUI.h"
+#import "QDUIHelper.h"
+#import "QDThemeManager.h"
+
+
+
+#import "CDMacroDefine.h"
+
+#import "QMUIButton+Normalize.h"
+
+#define CDTHEME_COLOR  [QDThemeManager  sharedInstance].currentTheme.themeTintColor
+
+
+#endif
+
+
+#endif /* CD_PrefixHeader_pch */
